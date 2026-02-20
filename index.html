@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <title>Meine Website</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bowlmate Food</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .cta {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 12px 24px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.2s ease;
+    }
+    .cta:hover {
+      background: #333;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hallo 👋</h1>
-  <p>Meine Website ist live.</p>
+  <div class="container">
+    <h1>Bowlmate</h1>
+    <p>Fresh. Healthy. Delivered.</p>
+    <a class="cta" href="#">Coming Soon</a>
+  </div>
 </body>
 </html>
