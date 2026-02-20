@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bowlmate – Bio-Soßen für Bowls, Salate & Meal-Prep</title>
-  <meta name="description" content="Bowlmate entwickelt Bio-Soßen, die Bowls, Salate und Meal-Prep in Sekunden besser machen – ausgewogene Zutaten, klarer Geschmack, cleanes Label." />
+  <meta name="description" content="Bowlmate entwickelt Bio-Saucen, die Bowls, Salate und Meal-Prep in Sekunden zu deinem persönlichem Signature Food machen — Bio-Zutaten, natürlicher Geschmack, schnell zubereitet." />
   <meta name="theme-color" content="#3c6338" />
 
   <style>
@@ -12,16 +12,22 @@
       --brand: #3c6338;
       --text: #0b0b0b;
       --muted: #5a5a5a;
-      --bg: #ffffff;
-      --card: #f6f7f6;
+
+      /* requested background */
+      --bg: #fdf9f3;
+
+      /* slightly cleaner card on warm bg */
+      --card: #ffffff;
+
       --border: rgba(0,0,0,.08);
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --shadow: 0 20px 40px rgba(0,0,0,.06);
       --radius: 18px;
       --max: 980px;
     }
 
     *{ box-sizing:border-box; }
     html,body{ height:100%; }
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -58,11 +64,7 @@
       width: 40px;
       height: 40px;
       display:block;
-    }
-
-    .brand-name{
-      font-weight: 650;
-      letter-spacing: .2px;
+      object-fit: contain;
     }
 
     .pill{
@@ -75,18 +77,32 @@
       white-space: nowrap;
     }
 
+    /* HERO: headline left, card right */
     .hero{
-      padding: 28px 0 10px;
+      padding: 48px 0 20px;
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap: 28px;
-      align-items: start;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-right{
+      display:flex;
+      justify-content:flex-end;
     }
 
     @media (max-width: 860px){
-      .hero{ grid-template-columns: 1fr; }
-      header{ flex-direction: column; align-items: flex-start; }
+      .hero{
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 28px 0 10px;
+      }
+      header{
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .pill{ white-space: normal; }
+      .hero-right{ justify-content: flex-start; }
     }
 
     h1{
@@ -99,7 +115,7 @@
     .subhead{
       font-size: 18px;
       color: var(--muted);
-      margin: 0 0 22px;
+      margin: 0;
       max-width: 60ch;
     }
 
@@ -108,7 +124,7 @@
       flex-wrap: wrap;
       gap: 12px;
       align-items: center;
-      margin: 18px 0 10px;
+      margin: 14px 0 0;
     }
 
     .btn{
@@ -122,14 +138,15 @@
       color: #fff;
       font-weight: 650;
       border: 1px solid rgba(0,0,0,.08);
-      box-shadow: 0 10px 20px rgba(60,99,56,.20);
+      box-shadow: 0 10px 20px rgba(60,99,56,.18);
       transition: transform .08s ease, box-shadow .18s ease, opacity .18s ease;
       min-height: 48px;
+      text-decoration: none;
     }
 
     .btn:hover{
       transform: translateY(-1px);
-      box-shadow: 0 14px 26px rgba(60,99,56,.24);
+      box-shadow: 0 14px 26px rgba(60,99,56,.22);
       text-decoration: none;
     }
 
@@ -150,6 +167,8 @@
       border-radius: var(--radius);
       padding: 18px;
       box-shadow: var(--shadow);
+      max-width: 360px;
+      width: 100%;
     }
 
     .card h2{
@@ -183,35 +202,6 @@
       color: var(--muted);
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-
-    .feature{
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-
-    .feature b{
-      display:block;
-      margin-bottom: 6px;
-      letter-spacing: .1px;
-    }
-
-    .feature span{
-      color: var(--muted);
-      font-size: 14px;
-    }
-
     footer{
       margin-top: 28px;
       border-top: 1px solid var(--border);
@@ -238,50 +228,46 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <!-- TODO: Pfad anpassen (z.B. /assets/logo.svg oder /images/logo.png) -->
+        <!-- TODO: Pfad anpassen -->
         <img class="logo" src="ChatGPT Image 11. Feb. 2026, 20_46_05.png" alt="Bowlmate Logo" />
       </div>
+      <div class="pill">Pre-Launch: Begleite unsere Reise! </div>
     </header>
 
     <main>
       <section class="hero">
-        <div>
+        <div class="hero-left">
           <h1>From Bowls to the Future of Healthy Convenience.</h1>
           <p class="subhead">
-            Bei Bowlmate entwickeln wir Bio-Soßen, die Bowls, Salate und Meal-Prep in Sekunden besser machen — ausgewogene Zutaten, klarer Geschmack, cleanes Label.
+            Bei Bowlmate entwickeln wir Bio-Soßen, die Bowls, Salate und Meal-Prep in Sekunden zu deinem persönlichem Signature Food machen — Bio-Zutaten, natürlicher Geschmack, schnell zubereitet.
           </p>
-          
- <section>
-        <div class="card">
-          <h2>Mitgestalten</h2>
-          <p>
-            Wir sind in der Entwicklung — und bauen Bowlmate mit dir. Sag uns, welche Sorten du willst, wie spicy es sein darf
-            und wo du Bowlmate als erstes kaufen würdest.
-          </p>
-          <div class="cta-row" style="margin-top:14px;">
-            <a class="btn" href="PASTE_GOOGLE_FORMS_URL_HERE" target="_blank" rel="noopener">Zum Formular →</a>
-            <p class="micro">Du bekommst Updates zum Pre-Launch.</p>
+        </div>
+
+        <div class="hero-right">
+          <div class="card">
+            <h2>Mitgestalten</h2>
+            <p>
+              Wir sind in der Entwicklung unsere ersten Saucen und bauen Bowlmate mit dir gemeinsam. Sag uns, welche Sorten du willst, wie spicy es sein darf
+              und wo du Bowlmate als erstes kaufen würdest.
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="PASTE_GOOGLE_FORMS_URL_HERE" target="_blank" rel="noopener">
+                Zum Formular →
+              </a>
+              <p class="micro">Verpasse keine Updates, erzähle uns von deinen Signature Sorten und werde Teil der ersten Test-Runde. Wir melden uns, sobald es Probierpakete gibt.</p>
+            </div>
           </div>
         </div>
-      </section>
-          
-        <aside class="card" aria-label="Kurzinfo">
-          <h2>Pre-Launch</h2>
-          <p>
-            Trag dich ein, gib Sorten-Feedback und werde Teil der ersten Test-Runde.
-            Wir melden uns, sobald es Probierpakete gibt.
-          </p>
-        </aside>
       </section>
 
       <section class="problem">
         <p class="lead">
-          Bowls daheim selber machen? Klingt gesund, lecker und easy — bis die Sauce kommt. Viele Fertigsoßen sind zu süß, voller Zusätze oder schmecken einfach flach. Und nie so wie in deinem Lieblings-Bowlladen.
+          Bowls zuhause selber machen? Klingt gesund, lecker und easy — bis die Sauce kommt. Viele Fertigsoßen sind zu süß, voller Zusätze oder schmecken einfach flach. Und nie so wie in deinem Lieblings-Bowlladen.
         </p>
         <p class="lead">
-          Bowlmate macht Bio-Soßen, die wie selbstgemacht schmecken: klar, frisch, ausgewogen — und sofort einsatzbereit.
+          Bowlmate änder das und bietet dir Bio-Soßen, die wie selbstgemacht schmecken: frisch, ausgewogen, ohne Zusätze — und sofort einsatzbereit.
         </p>
-
+      </section>
     </main>
 
     <footer>
